@@ -5,9 +5,16 @@
         [FileTables]
         [Внешние таблицы]
         [Графовые таблицы]
-        [dbo.Categories]
-        [dbo.Contacts]
-        [dbo.CustomerCustomerDemo]
+
+        [dbo.Categories] # Категория товаров и ее описание
+            [CategoryID],[CategoryName],[Description],[Picture]
+
+        [dbo.Contacts] # Данные на клиента,поставщика(компания, должность, адресс, телефон...)
+            [ContactID],[ContactType],[CompanyName],[ContactName],[ContactTitle],[Address],[City],
+            [Region],[PostalCode],[Country],[Phone],[Extension],[Fax],[HomePage],[PhotoPath],[Photo]
+
+        [dbo.CustomerCustomerDemo] 
+            [CustomerID],[CustomerTypeID]
         [dbo.CustomerDemographics]
         [dbo.Customers]
         [dbo.Employees]
