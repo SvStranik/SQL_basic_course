@@ -1,10 +1,12 @@
 [northwind]
     [Диаграммы баз данных]
     [Таблицы]
-        [Системные таблицы]
-        [FileTables]
-        [Внешние таблицы]
-        [Графовые таблицы]
+        [Системные таблицы] - [dbo.sysdiagrams]
+            [name],[principal_id],[diagram_id],[version],[definition]
+
+        [FileTables] - (пусто)
+        [Внешние таблицы] - (пусто)
+        [Графовые таблицы] - (пусто)
 
         [dbo.Categories] # Категория товаров и ее описание
             [CategoryID],[CategoryName],[Description],[Picture]
@@ -54,9 +56,31 @@
             [TerritoryID],[TerritoryDescription],[RegionID]
 
     [Представления]
-    [Внешние ресурсы]
-    [Синонимы]
-    [Программирование]
+        [Системные представления] - (много таблиц)
+        [dbo.Alphabetical list of products]
+        [dbo.Category Sales for 1997]
+        [dbo.Current Product List]
+        [dbo.Customer and Suppliers by City]
+        [dbo.Invoices]
+        [dbo.Order Details Extended]
+        [dbo.Order Subtotals]
+        [dbo.Orders Qry]
+        [dbo.Product Sales for 1997]
+        [dbo.Products Above Average Price]
+        [dbo.Products by Category]
+        [dbo.Quarterly Orders]
+        [dbo.Sales by Category]
+        [dbo.Sales Totals by Amount]
+        [dbo.Summary of Sales by Quarter]
+        [dbo.Summary of Sales by Year]
+    [Внешние ресурсы] - (пусто)
+    [Синонимы] - (пусто)
+    [Программирование] 
+        [Хранимые процедуры],[Функции],[Триггеры базы данных],[Сборки],[Типы],[Правила],[Значения по умолчанию],[Последовательности]
     [Компонент Service Broker]
+        [Типы сообщений],[Контракты],[Очереди],[Службы],[Маршруты],[Привязка удаленной службы],[Приоритеты компонента Service Broker]
     [Хранилище]
+        [Полнотекстовые каталоги],[Полнотекстовые списки стоп-слов],[Схемы секционирования],[Функции секционирования]
     [Безопасность]
+        [Пользователи],[Роли],[Схемы],[Асимметричные ключи],[Сертификаты],[Симметричные ключи],[Ключи Always Encripted],
+        [Спецификация аудита БД],[Политики безопасности]
