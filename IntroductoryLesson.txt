@@ -13,19 +13,46 @@
             [ContactID],[ContactType],[CompanyName],[ContactName],[ContactTitle],[Address],[City],
             [Region],[PostalCode],[Country],[Phone],[Extension],[Fax],[HomePage],[PhotoPath],[Photo]
 
-        [dbo.CustomerCustomerDemo] 
+        [dbo.CustomerCustomerDemo] # Пустая таблица
             [CustomerID],[CustomerTypeID]
-        [dbo.CustomerDemographics]
-        [dbo.Customers]
-        [dbo.Employees]
-        [dbo.EmployeeTerritories]
-        [dbo.Order Details]
-        [dbo.Orders]
-        [dbo.Products]
-        [dbo.Region]
-        [dbo.Shippers]
-        [dbo.Suppliers]
-        [dbo.Territories]
+
+        [dbo.CustomerDemographics] # Пустая таблица
+            [CustomerID],[CustomerTypeID]
+
+        [dbo.Customers] # Данные клиентов (пересекается с dbo.Contacts)
+            [CustomerID],[CompanyName],[ContactName],[ContactTitle],[Address],[City],[Region],[PostalCode],[Country],[Phone],[Fax]
+
+        [dbo.Employees] # Данные на сотрудников
+            [EmployeeID],[LastName],[FirstName],[Title],[TitleOfCourtesy],[BirthDate],[HireDate],[Address],[City],
+            [Region],[PostalCode],[Country],[HomePhone],[Extension],[Photo],[Notes],[ReportsTo],[PhotoPath]
+
+        [dbo.EmployeeTerritories] # Идентификатор территорий сотрудников
+            [EmployeeID],[TerritoryID]
+
+        [dbo.Order Details] # Организационная документация на продукты (цена, кол-во, скидка..)
+            [OrderID],[ProductID],[UnitPrice],[Quantity],[Discount]
+
+        [dbo.Orders] # Организационная документация на отправку товара (дата, сотрудник, груз, когда, куда и как ...)
+            [OrderID],[CustomerID],[EmployeeID],[OrderDate],[RequiredDate],[ShippedDate],[ShipVia],[Freight],
+            [ShipName],[ShipAddress],[ShipCity],[ShipRegion],[ShipPostalCode],[ShipCountry]
+
+        [dbo.Products] # Сведения о продукте
+            [ProductID],[ProductName],[SupplierID],[CategoryID],[QuantityPerUnit],[UnitPrice],[UnitsInStock],
+            [UnitsOnOrder],[ReorderLevel],[Discontinued]
+
+        [dbo.Region] # Описание региона (Восточный,Западный,Северный,Южный)
+            [RegionID],[RegionDescription]
+
+        [dbo.Shippers] # Вид доставки с контактами
+            [ShipperID],[CompanyName],[Phone]
+
+        [dbo.Suppliers] # Контактные данные постовщика
+            [SupplierID],[CompanyName],[ContactName],[ContactTitle],[Address],[City],[Region],[PostalCode],
+            [Country],[Phone],[Fax],[HomePage]
+
+        [dbo.Territories] # Территория (ID, регион)
+            [TerritoryID],[TerritoryDescription],[RegionID]
+
     [Представления]
     [Внешние ресурсы]
     [Синонимы]
