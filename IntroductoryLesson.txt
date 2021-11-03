@@ -57,22 +57,22 @@
 
     [Представления]
         [Системные представления] - (много таблиц)
-        [dbo.Alphabetical list of products]
-        [dbo.Category Sales for 1997]
-        [dbo.Current Product List]
-        [dbo.Customer and Suppliers by City]
-        [dbo.Invoices]
-        [dbo.Order Details Extended]
-        [dbo.Order Subtotals]
-        [dbo.Orders Qry]
-        [dbo.Product Sales for 1997]
-        [dbo.Products Above Average Price]
-        [dbo.Products by Category]
-        [dbo.Quarterly Orders]
-        [dbo.Sales by Category]
-        [dbo.Sales Totals by Amount]
-        [dbo.Summary of Sales by Quarter]
-        [dbo.Summary of Sales by Year]
+        [dbo.Alphabetical list of products] - Алфавитный список товаров
+        [dbo.Category Sales for 1997] - Продажи по категориям за 1997 год
+        [dbo.Current Product List] - Текущий список Продуктов
+        [dbo.Customer and Suppliers by City] - Заказчик и поставщики по городам
+        [dbo.Invoices] - Счета-фактуры
+        [dbo.Order Details Extended] - Расширенные сведения о заказе
+        [dbo.Order Subtotals] - Промежуточные итоги заказа
+        [dbo.Orders Qry] - Заказы Qry
+        [dbo.Product Sales for 1997] - Продажи продукции за 1997 год
+        [dbo.Products Above Average Price] - Товары по цене выше средней
+        [dbo.Products by Category] - Товары по категориям
+        [dbo.Quarterly Orders] - Ежеквартальные заказы
+        [dbo.Sales by Category] - Продажи по категориям
+        [dbo.Sales Totals by Amount] - Итоги продаж по суммам
+        [dbo.Summary of Sales by Quarter] - Сводка продаж по кварталам
+        [dbo.Summary of Sales by Year] - Сводка продаж по годам
     [Внешние ресурсы] - (пусто)
     [Синонимы] - (пусто)
     [Программирование] 
