@@ -3,7 +3,6 @@
     [Таблицы]
         [Системные таблицы] - [dbo.sysdiagrams]
             [name],[principal_id],[diagram_id],[version],[definition]
-
         [FileTables] - (пусто)
         [Внешние таблицы] - (пусто)
         [Графовые таблицы] - (пусто)
