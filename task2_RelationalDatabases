@@ -1,0 +1,13 @@
+[dbo.Categories] -  [dbo.Products] => один ко многим
+[dbo.Suppliers] - [dbo.Products] => один ко многим
+[dbo.Products] - [dbo.Order Details] => один ко многим
+[dbo.Orders] - [dbo.Order Details] => один ко многим
+[dbo.Customers] - [dbo.Orders] => один ко многим
+[dbo.Shippers] - [dbo.Orders] => один ко многим
+[dbo.Employees] - [dbo.Orders] => один ко многим
+[dbo.Customers] - [dbo.CustomerCustomerDemo] == [dbo.CustomerDemographics] - [dbo.CustomerCustomerDemo] =>
+    [dbo.Customers] - [dbo.CustomerDemographics] => многие ко многим
+[dbo.Employees] - [dbo.EmployeeTerritories] => один ко многим
+[dbo.Territories] - [dbo.EmployeeTerritories] => один к одному
+[dbo.Region] - [dbo.Territories] => один ко многим
+[dbo.Contacts] => нет связий
