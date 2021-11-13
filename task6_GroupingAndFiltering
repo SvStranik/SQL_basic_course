@@ -1,0 +1,9 @@
+5.4.3.
+    SELECT ContactType,COUNT(ContactType) as QuantituContact
+    FROM Contacts
+    GROUP BY ContactType
+5.4.4.
+    SELECT CategoryID, AVG(UnitPrice) as AveragePrice 
+    FROM Products
+    GROUP BY CategoryID
+    ORDER BY AveragePrice
