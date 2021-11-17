@@ -1,0 +1,15 @@
+9.4.1
+    SELECT t1.CustomerID, t1.ContactName, t2.CustomerID, t2.ContactName
+    FROM Customers t1, Customers t2
+    WHERE t1.Region IS Null AND t2.Region IS Null AND t1.CustomerID <> t2.CustomerID
+    ORDER BY t1.CustomerID
+9.4.2
+    SELECT t2.*
+    FROM Customers t1, Orders t2
+    WHERE t2.CustomerID = ANY
+        (SELECT CustomerID FROM Customers
+        WHERE Region IS NOT Null)
+9.4.3
+    SELECT * FROM Orders
+    WHERE Freight > ANY
+	    (SELECT MAX(UnitPrice) FROM Products)
