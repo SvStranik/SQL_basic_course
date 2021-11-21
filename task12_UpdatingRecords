@@ -1,0 +1,20 @@
+12.3.1
+    INSERT INTO Employees (LastName,FirstName,TitleOfCourtesy,BirthDate,
+						HireDate,Address,City,
+						PostalCode,Country)
+    VALUES ('Ivanov','Ivan','Mr.','1980-01-01 00:00:00.000',
+		    '2000-01-01 00:00:00.000','Kirova 70a','Kirov',
+		    '610000','Russia') 
+12.3.2
+    INSERT INTO Territories(TerritoryID,TerritoryDescription,RegionID)
+    VALUES (00010, 'Kirov',1) 
+    INSERT INTO EmployeeTerritories (EmployeeID,TerritoryID)
+    VALUES (26,00010)
+12.3.3
+    INSERT INTO Orders (CustomerID,EmployeeID, OrderDate,
+					RequiredDate,ShippedDate,ShipVia,Freight,
+					ShipName)
+    VALUES ('GPPET',26,'2001-01-01 00:00:00.000','2001-02-01 00:00:00.000',
+			'2001-01-01 00:00:00.000',1,'10,01','Primer')
+
+    Не возникло конфликтов
