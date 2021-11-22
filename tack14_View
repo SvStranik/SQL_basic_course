@@ -1,0 +1,45 @@
+14.1.
+    Orders хранит значения, Invoices отбирает значения согласно условию (INNER JOIN), где конкретно
+    прописаны параметры по ключам таблиц (Shippers,Products,Employees,Customers,Orders) 
+    т.е. результат отбирается из несколько таблиц и сводится в единный результат
+14.2.
+    SELECT CategoryName, SUM(ProductSales) AS CategorySales
+    FROM dbo.[Product Sales for 1997]
+    GROUP BY CategoryName
+
+    Вычисляет сумму ProductSales из представления "Product Sales for 1997" и выводит как поле CategorySales,
+    сортируется таблица по полю CategoryName
+14.3.
+    SELECT dbo.[Order Subtotals].Subtotal AS SaleAmount, dbo.Orders.OrderID, dbo.Customers.CompanyName, dbo.Orders.ShippedDate
+        FROM dbo.Customers INNER JOIN
+                  dbo.Orders INNER JOIN
+                  dbo.[Order Subtotals] 
+                  ON dbo.Orders.OrderID = dbo.[Order Subtotals].OrderID 
+                  ON dbo.Customers.CustomerID = dbo.Orders.CustomerID
+                  WHERE  (dbo.[Order Subtotals].Subtotal > 2500) AND (dbo.Orders.ShippedDate BETWEEN '19970101' AND '19971231')
+
+    По условию представления "Order Subtotals > 2500" и задданного диапазона табоици "Orders", через ключивые поля
+    (INNER JOIN) выводим заданный результат
+14.4.
+    SELECT ProductName, UnitPrice
+    FROM dbo.Products
+    WHERE (UnitPrice >
+            (SELECT AVG(UnitPrice) AS Expr1
+             FROM dbo.Products))
+
+    Вычисляем среднее значение "UnitPrice" и сравниваем с каждой позицией "UnitPrice"
+    Если "UnitPrice" больше среднего значения записываем в таблицу - результат
+14.5.
+    SELECT dbo.Orders.ShippedDate, dbo.Orders.OrderID, dbo.[Order Subtotals].Subtotal
+    FROM dbo.Orders INNER JOIN
+        dbo.[Order Subtotals] 
+        ON dbo.Orders.OrderID = dbo.[Order Subtotals].OrderID
+        WHERE  (dbo.Orders.ShippedDate IS NOT NULL)
+
+    Сводим таблицу "Orders" и представление "Order Subtotals" по ключевым полям
+    и если в таблице Orders.ShippedDate поле не NULL записываем результат.
+
+    "Order Subtotals" вычисляется по представлению  из таблици Order Details:
+    SELECT OrderID, SUM(CONVERT(money, (UnitPrice * Quantity) * (1 - Discount) / 100) * 100) AS Subtotal
+    FROM dbo.[Order Details]
+        GROUP BY OrderID
