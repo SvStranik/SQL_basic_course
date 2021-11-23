@@ -1,0 +1,18 @@
+15.7.
+    CREATE DATABASE MyTest
+    USE MyTest
+    CREATE TABLE Region ( 
+        RegionID int NOT NULL, 
+        RegionDescription nchar(50) NOT NULL )
+    ALTER TABLE Region ADD Help nchar(16);
+    CREATE TABLE Territories (
+	    TerritoryID nvarchar(20) NOT NULL,
+	    TerritoryDescription nchar(50) NOT NULL,
+	    RegionID int  NOT NULL)
+
+    ... создал связи между табоицами с помощью "Диаграммы баз данных" ...
+
+    INSERT INTO Region (RegionID, RegionDescription) VALUES 
+    (1,'Eastern'),(2,'Western');
+    INSERT INTO Territories (TerritoryID, TerritoryDescription, RegionID) VALUES
+    ('0011','Westboro',1), ('0012','Bedford',1),('0013','Georgetow',2),('0014','Boston',2);
