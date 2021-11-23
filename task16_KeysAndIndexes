@@ -1,0 +1,10 @@
+USE MyTest
+CREATE TABLE Region ( 
+	RegionID int IDENTITY(100,100) PRIMARY KEY, 
+    RegionDescription nchar(50) NOT NULL );
+
+    CREATE TABLE Territories (
+	    TerritoryID nvarchar(20) NOT NULL,
+	    TerritoryDescription nchar(50) NOT NULL,
+	    RegionID int  NOT NULL)
+CREATE INDEX idxTerritories ON Territories (TerritoryID)
